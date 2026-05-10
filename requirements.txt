@@ -1,0 +1,90 @@
+# ==============================
+# LANGCHAIN & AGENT FRAMEWORK
+# ==============================
+
+langchain                 # Main LangChain framework
+langchain-core            # LCEL, Runnables, core abstractions
+langchain-community       # Community tools, loaders, integrations
+langchain-google-genai    # Gemini integration with LangChain
+langgraph                 # Multi-agent workflows and orchestration
+langsmith                 # Debugging, tracing, monitoring agents
+
+
+# ==============================
+# GOOGLE GEMINI
+# ==============================
+
+google-generativeai       # Official Gemini Python SDK
+
+
+# ==============================
+# SEARCH & WEB TOOLS
+# ==============================
+
+tavily-python             # Tavily AI search API
+duckduckgo-search         # Free web search utility
+wikipedia                 # Wikipedia search/retrieval
+
+
+# ==============================
+# WEB SCRAPING
+# ==============================
+
+beautifulsoup4            # HTML parsing and scraping
+lxml                      # Fast HTML/XML parser
+requests                  # Synchronous HTTP requests
+httpx                     # Modern async HTTP client
+aiohttp                   # Async web requests
+
+
+# ==============================
+# ENVIRONMENT & CONFIG
+# ==============================
+
+python-dotenv             # Load API keys from .env file
+
+
+# ==============================
+# DATA VALIDATION
+# ==============================
+
+pydantic                  # Structured outputs and validation
+typing-extensions         # Advanced Python typing support
+
+
+# ==============================
+# API BACKEND
+# ==============================
+
+fastapi                   # Backend API framework
+uvicorn                   # FastAPI development server
+
+
+# ==============================
+# VECTOR & MEMORY
+# ==============================
+
+faiss-cpu                 # Vector database / semantic search
+
+
+# ==============================
+# DATA PROCESSING
+# ==============================
+
+numpy                     # Numerical operations
+pandas                    # Data analysis and tables
+
+
+# ==============================
+# TOKEN & PROMPT UTILITIES
+# ==============================
+
+tiktoken                  # Token counting utility
+jinja2                    # Prompt templating
+
+
+# ==============================
+# TERMINAL OUTPUT
+# ==============================
+
+rich                      # Beautiful terminal logs/output
