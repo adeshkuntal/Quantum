@@ -8,7 +8,7 @@ langchain-community       # Community tools, loaders, integrations
 langchain-google-genai    # Gemini integration with LangChain
 langgraph                 # Multi-agent workflows and orchestration
 langsmith                 # Debugging, tracing, monitoring agents
-
+langchain-groq
 
 # ==============================
 # GOOGLE GEMINI

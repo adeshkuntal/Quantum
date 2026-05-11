@@ -1,7 +1,9 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from dotenv import load_dotenv
+import os
 
 load_dotenv()
 
@@ -10,9 +12,10 @@ load_dotenv()
 # MODEL SETUP
 # =========================================================
 
-llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",
+llm = ChatGroq(
+    model="llama-3.3-70b-versatile",
     temperature=0,
+    api_key=os.getenv("GROQ_API_KEY")
 )
 
 
@@ -21,33 +24,21 @@ llm = ChatGoogleGenerativeAI(
 # =========================================================
 
 writer_prompt = ChatPromptTemplate.from_messages([
+    ("system", "You are an expert research writer. Write clear, structured and insightful reports."),
+    ("human", """Write a detailed research report on the topic below.
 
-    (
-        "system",
-        "You are a professional research writer. "
-        "Write concise, clear and factual reports."
-    ),
+    Topic: {topic}
 
-    (
-        "human",
-        """
-        Write a research report on:
+    Research Gathered:
+    {research}
 
-        Topic:
-        {topic}
+    Structure the report as:
+    - Introduction
+    - Key Findings (minimum 3 well-explained points)
+    - Conclusion
+    - Sources (list all URLs found in the research)
 
-        Research:
-        {research}
-
-        Structure:
-        1. Introduction
-        2. Key Findings
-        3. Conclusion
-        4. Sources
-
-        Keep the report under 500 words.
-        """
-    ),
+    Be detailed, factual and professional."""),
 ])
 
 writer_chain = writer_prompt | llm | StrOutputParser()

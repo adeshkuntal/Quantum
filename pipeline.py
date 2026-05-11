@@ -118,19 +118,15 @@ def run_research_pipeline(topic: str) -> dict:
     print("STEP 3 - Generating report...")
     print("=" * 50)
 
-    search_text = state["search_results"][:1000]
-
-    scrape_text = state["scraped_content"][:1500]
+    search_text = state["search_results"][:1500]
+    scrape_text = state["scraped_content"][:2500]
 
     research_combined = (
         f"SEARCH RESULTS:\n{search_text}\n\n"
         f"SCRAPED CONTENT:\n{scrape_text}"
     )
 
-    state["report"] = safe_invoke(
-
-        writer_chain,
-
+    state["report"] = safe_invoke(writer_chain,
         {
             "topic": topic,
             "research": research_combined
